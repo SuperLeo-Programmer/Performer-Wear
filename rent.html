@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent Clothing</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="rent-page">
+        <h2>Complete Your Rental</h2>
+        <form action="confirm.html">
+            <label for="shipping-address">Shipping Address:</label>
+            <input type="text" id="shipping-address" name="shipping-address" required>
+
+            <label for="payment-method">Payment Method:</label>
+            <select id="payment-method" name="payment-method">
+                <option value="credit-card">Credit Card</option>
+                <option value="paypal">PayPal</option>
+                <option value="bank-transfer">Bank Transfer</option>
+            </select>
+
+            <button type="submit" class="rent-btn">Confirm & Rent</button>
+        </form>
+    </div>
+</body>
+</html>

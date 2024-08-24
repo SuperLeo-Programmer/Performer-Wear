@@ -1,0 +1,133 @@
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+nav {
+    background-color: #343a40;
+    padding: 15px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h1 {
+    margin: 0;
+    color: #fff;
+    font-size: 1.8em;
+}
+
+.nav-links a {
+    color: #ffc107;
+    text-decoration: none;
+    margin: 0 12px;
+    font-size: 1.2em;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    background: #ffc107;
+    transition: 0.3s;
+    bottom: -5px;
+    left: 0;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: #ffca28;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 5px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 200px;
+    background-color: #fff;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 50%;
+    height: 50%;
+    border-bottom: 1px solid #eee;
+}
+
+.details {
+    padding: 10px 15px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.price {
+    font-size: 1.4em;
+    color: #ff5722;
+    margin-bottom: 10px;
+}
+
+.delivery,
+.rate {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.rent-btn {
+    background-color: #ff5722;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.rent-btn:hover {
+    background-color: #e64a19;
+}
+
+button#add-card-btn {
+    display: block;
+    margin: 30px auto;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button#add-card-btn:hover {
+    background-color: #0056b3;
+}
