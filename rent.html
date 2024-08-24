@@ -1,182 +1,57 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const productContainer = document.getElementById('product-container');
-    const products = [
-        { name: 'Nigga For Sale', imgSrc:"images/6jpg.jpg", price: '₹1', ratePerDay: '₹0.1', deliveryDate: '3 days' },
-        { name: 'Slay Yellow Fangirl',  imgSrc:"images/3.jpg", price: '₹50', ratePerDay: '₹5', deliveryDate: '2 days' },
-        // Additional sample products
-        { name: 'Slayy Dark Blue',  imgSrc:"images/2jpg.jpg", price: '₹60', ratePerDay: '₹6', deliveryDate: '1 day' },
-        { name: 'Smash Green',  imgSrc:"images/4.jpg", price: '₹70', ratePerDay: '₹7', deliveryDate: '5 days' },
-    ];
-
-    function addProductCard(product) {
-        const card = `
-            <div class="col-md-3">
-                <div class="card product-card">
-                    <img src="${product.imgSrc}" class="card-img-top" alt="Product Image">
-                    <div class="card-body">
-                        <h5 class="card-title">${product.name}</h5>
-                        <p class="card-text">Price: ${product.price}</p>
-                        <p class="card-text">Rate per day: ${product.ratePerDay}</p>
-                        <p class="card-text">Delivery by: ${product.deliveryDate}</p>
-                        <a href="rent.html" class="btn btn-primary">Rent Now</a>
-                    </div>
-                </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent Item - Performer Wear</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Rent Page Content -->
+    <div class="container mt-5">
+        <h1 class="text-center">Rent Your Selected Item</h1>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <img src="images/3.jpg" style="border-radius: 8px; height: 500px; width: 300px; margin-left: 150px; object-fit: cover; " class="img-fluid" alt="Product Image">
             </div>
-        `;
-        productContainer.insertAdjacentHTML('beforeend', card);
-    }
-
-    document.getElementById('add-product-btn').addEventListener('click', function() {
-        Swal.fire({
-            title: 'Add New Product',
-            html:
-                '<input id="product-name" class="swal2-input" placeholder="Product Name">' +
-                '<input id="product-price" class="swal2-input" placeholder="Price">' +
-                '<input id="rate-per-day" class="swal2-input" placeholder="Rate per Day">' +
-                '<input id="delivery-date" class="swal2-input" placeholder="Delivery Date (days)">' +
-                '<input id="img-src" class="swal2-input" placeholder="Image URL">',
-            focusConfirm: false,
-            preConfirm: () => {
-                const name = document.getElementById('product-name').value;
-                const price = document.getElementById('product-price').value;
-                const ratePerDay = document.getElementById('rate-per-day').value;
-                const deliveryDate = document.getElementById('delivery-date').value;
-                const imgSrc = document.getElementById('img-src').value;
-
-                if (name && price && ratePerDay && deliveryDate && imgSrc) {
-                    const newProduct = {
-                        name,
-                        price,
-                        ratePerDay,
-                        deliveryDate: `${deliveryDate} days`,
-                        imgSrc
-                    };
-                    addProductCard(newProduct);
-                }
-            }
-        });
-    });
-
-    products.forEach(addProductCard);
-});
-
-function confirmRental() {
-    Swal.fire({
-        title: 'Confirm Rental',
-        text: 'Are you sure you want to confirm this rental?',
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonText: 'Yes, confirm it!',
-        cancelButtonText: 'No, cancel!',
-    }).then((result) => {
-        if (result.isConfirmed) {
-            Swal.fire(
-                'Confirmed!',
-                'Your rental has been confirmed.',
-                'success'
-            );
-        }
-    });
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-    const productContainer = document.getElementById('product-container');
-    const products = [
-        { name: 'Dress A',  imgSrc:"images/3.jpg", price: '₹40', ratePerDay: '₹4', deliveryDate: '3 days' },
-        { name: 'Dress B',  imgSrc:"images/3.jpg", price: '₹50', ratePerDay: '₹5', deliveryDate: '2 days' },
-        // Add more sample products if needed
-    ];
-
-    
-
-    document.getElementById('add-product-btn').addEventListener('click', function() {
-        Swal.fire({
-            title: 'Add New Product',
-            html:
-                '<input id="product-name" class="swal2-input" placeholder="Product Name">' +
-                '<input id="product-price" class="swal2-input" placeholder="Price">' +
-                '<input id="rate-per-day" class="swal2-input" placeholder="Rate per Day">' +
-                '<input id="delivery-date" class="swal2-input" placeholder="Delivery Date (days)">' +
-                '<input id="img-src" class="swal2-input" placeholder="Image URL">',
-            focusConfirm: false,
-            preConfirm: () => {
-                const name = document.getElementById('product-name').value;
-                const price = document.getElementById('product-price').value;
-                const ratePerDay = document.getElementById('rate-per-day').value;
-                const deliveryDate = document.getElementById('delivery-date').value;
-                const imgSrc = document.getElementById('img-src').value;
-
-                if (name && price && ratePerDay && deliveryDate && imgSrc) {
-                    const newProduct = {
-                        name,
-                        price,
-                        ratePerDay,
-                        deliveryDate: `₹{deliveryDate} days`,
-                        imgSrc
-                    };
-                    addProductCard(newProduct);
-                }
-            }
-        });
-    });
-
-    products.forEach(addProductCard);
-});
-
-
-function addProductCard(product) {
-    const card = `
-        <div class="col-md-3">
-            <div class="card product-card">
-                <img src="${product.imgSrc}" class="card-img-top" alt="Product Image">
-                <div class="card-body">
-                    <h5 class="card-title">${product.name}</h5>
-                    <p class="card-text">Price: ${product.price}</p>
-                    <p class="card-text">Rate per day: ${product.ratePerDay}</p>
-                    <p class="card-text">Delivery by: ${product.deliveryDate}</p>
-                    <a href="rent.html" class="btn btn-primary">Rent Now</a>
-                </div>
+            <div class="col-md-6">
+                <h2>Product Name</h2>
+                <p class="lead">Price: ₹50</p>
+                <p class="lead">Rate per day: ₹5</p>
+                <p class="lead">Delivery Date: 2 days</p>
+                <hr>
+                <form>
+                    <div class="form-group">
+                        <label for="address">Shipping Address:</label>
+                        <textarea class="form-control" id="address" rows="3" placeholder="Enter your address here"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="payment-method">Payment Method:</label>
+                        <select class="form-control" id="payment-method">
+                            <option>Credit Card</option>
+                            <option>Bank Transfer</option>
+                            <option>UPI</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="delivery-options">Delivery Options:</label>
+                        <select class="form-control" id="delivery-options">
+                            <option>Standard Delivery - 3 to 5 days</option>
+                            <option>Express Delivery - 1 to 2 days</option>
+                            <option>Same Day Delivery (Extra ₹100)</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-lg btn-block" onclick="confirmRental()">Confirm Rental</button>
+                </form>
             </div>
         </div>
-    `;
-    productContainer.insertAdjacentHTML('beforeend', card);
-}
+    </div>
 
-// Function to trigger SweetAlert for adding a new product
-function showAddProductAlert() {
-    Swal.fire({
-        title: 'Add New Product',
-        html:
-            '<input id="product-name" class="swal2-input" placeholder="Product Name">' +
-            '<input id="product-price" class="swal2-input" placeholder="Price">' +
-            '<input id="rate-per-day" class="swal2-input" placeholder="Rate per Day">' +
-            '<input id="delivery-date" class="swal2-input" placeholder="Delivery Date (days)">' +
-            '<input id="img-src" class="swal2-input" placeholder="Image URL">',
-        focusConfirm: false,
-        preConfirm: () => {
-            const name = document.getElementById('product-name').value;
-            const price = document.getElementById('product-price').value;
-            const ratePerDay = document.getElementById('rate-per-day').value;
-            const deliveryDate = document.getElementById('delivery-date').value;
-            const imgSrc = document.getElementById('img-src').value;
-
-            if (name && price && ratePerDay && deliveryDate && imgSrc) {
-                const newProduct = {
-                    name,
-                    price,
-                    ratePerDay,
-                    deliveryDate: `₹{deliveryDate} days`,
-                    imgSrc
-                };
-                addProductCard(newProduct);
-            }
-        }
-    });
-}
-
-document.getElementById('add-product-btn').addEventListener('click', showAddProductAlert);
-
-products.forEach(addProductCard);
-
-// Expose the function to be used in HTML onclick
-window.showAddProductAlert = showAddProductAlert;
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js"></script>
+</body>
+</html>
