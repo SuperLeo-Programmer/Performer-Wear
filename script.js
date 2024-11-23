@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() {
     const productContainer = document.getElementById('product-container');
     const products = [
-        { name: 'Nigga For Sale', imgSrc:"images/6jpg.jpg", price: '₹1', ratePerDay: '₹0.1', deliveryDate: '3 days' },
-        { name: 'Slay Yellow Fangirl',  imgSrc:"images/3.jpg", price: '₹50', ratePerDay: '₹5', deliveryDate: '2 days' },
+        { name: 'Black Shirt', imgSrc:"images/1.jpg", price: '₹1', ratePerDay: '₹0.1', deliveryDate: '3 days' },
+        { name: 'Yellow',  imgSrc:"images/3.jpg", price: '₹50', ratePerDay: '₹5', deliveryDate: '2 days' },
         // Additional sample products
-        { name: 'Slayy Dark Blue',  imgSrc:"images/2jpg.jpg", price: '₹60', ratePerDay: '₹6', deliveryDate: '1 day' },
-        { name: 'Smash Green',  imgSrc:"images/4.jpg", price: '₹70', ratePerDay: '₹7', deliveryDate: '5 days' },
+        { name: 'Blue',  imgSrc:"images/2jpg.jpg", price: '₹60', ratePerDay: '₹6', deliveryDate: '1 day' },
+        { name: 'Green',  imgSrc:"images/4.jpg", price: '₹70', ratePerDay: '₹7', deliveryDate: '5 days' },
     ];
 
     function addProductCard(product) {
